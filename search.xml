@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ikbc poker</title>
+    <url>/2020/01/30/ikbc-poker/</url>
+    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/FC99987B50FABBD670F57F0D8764AD95.jpg" alt=""></p>
+<p>前几天买的ikbc poker升级版</p>
+<a id="more"></a>
+
+<p>就是上面了，4不4挺漂亮？</p>
+<p>我在京东上买的，原价399让我285买到了，京东活动+店家活动+白条减价，就这么叠加过来的🤣。下面来说说我的使用感受8。</p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/7.jpg" alt=""></p>
+<p>首先，这是我第一次玩机械键盘，还有很多东西不太懂，如果你知道的话，可以在评论区留言。</p>
+<p>首先我感觉它既有缺点又有优点。缺点非常明显，优点也非常明显。</p>
+<blockquote>
+<ol>
+<li>优点<br>首先我觉得，cherry红轴挺舒服，我买的就是红轴，感觉用它打字就是一种享受。其次，它的pbt键帽摸着也非常爽，我以后再买键盘，键帽就用pbt的，太爽了实在，要知道，我以前都是摸薄膜键盘的abs键帽的。还有一点就是功能也挺齐全，虽然很小巧，但可以通过Fn来搭配实现某些功能，还可以编程。并且外观也很漂亮，简约。</li>
+<li>缺点<br>这个缺点是最让我难受的，就是大键的卫星轴太太太太肉了，按着太难受了。真不知道怎么办才好，而且这些大键还要经常用到！就下面。</li>
+</ol>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130161014.png" alt=""></p>
+<p>就是这个左Shift，太太太太难受了。真的难受到无法形容，感觉还没薄膜键盘舒服，但是也稍微能理解，毕竟这键盘也算是中低端的。但是看贴吧上说，这个问题好像可以用润滑油来解决？其实我也不是特别清楚，以后有时间会研究研究。</p>
+<blockquote>
+<p>总结：就总体而言，其实还是挺满意的，而且就在这种发瘟的特殊时期，快递还跑，太敬业了，点赞👍。</p>
+</blockquote>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <tags>
+        <tag>随心谈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PicGO的使用，让你写Markdown插入图片更方便！</title>
     <url>/2020/01/30/PicGO/</url>
     <content><![CDATA[<blockquote>
@@ -57,11 +103,32 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
     <content><![CDATA[<p><strong>说的是你，对，看看本博客的域名！</strong></p>
 <a id="more"></a>
 
-<p>&emsp;&emsp;(滑稽)这是我在阿里云买的廉价域名，今天是 1 月 29 号的话，那我就是在 28 号买的，首年只要 9 块钱，这让捡垃圾多年的我露出了灿烂了微笑，这么 NB 的域名竟然没有人要！</p>
-<p>&emsp;&emsp;这可吓死我了，打开支付宝，我就看见我只有 14 的钱包，只能割肉忍痛买掉了。我其实还挺喜欢这个域名的，要问我为什么不买 microsotf.com？这是因为 microsotf.com 已经被微软官方给买下来了，没错！所以我面子还是很大的 😂</p>
+<p>  (滑稽)这是我在阿里云买的廉价域名，今天是 1 月 29 号的话，那我就是在 28 号买的，首年只要 9 块钱，这让捡垃圾多年的我露出了灿烂了微笑，这么 NB 的域名竟然没有人要！</p>
+<p>  这可吓死我了，打开支付宝，我就看见我只有 14 的钱包，只能割肉忍痛买掉了。我其实还挺喜欢这个域名的，要问我为什么不买 microsotf.com？这是因为 microsotf.com 已经被微软官方给买下来了，没错！所以我面子还是很大的 😂</p>
 <p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/a.png" alt=""></p>
-<p>&emsp;&emsp;其实我挺喜欢这个域名的，虽然现在有点小后悔，没有选中与本站名有关联的域名，不过其实挺有特色的对吧？</p>
-]]></content>
+<p>  其实我挺喜欢这个域名的，虽然现在有点小后悔，没有选中与本站名有关联的域名，不过其实挺有特色的对吧？</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <tags>
+        <tag>随心谈</tag>
+      </tags>
   </entry>
   <entry>
     <title>ArchLinux的安装以及使用心得</title>
