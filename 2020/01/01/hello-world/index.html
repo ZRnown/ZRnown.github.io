@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">4.7k</span>阅读时长: <span class="post-count reading-time">19 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">4.5k</span>阅读时长: <span class="post-count reading-time">18 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -454,14 +454,12 @@ height:50vh;
 <li>你刚买的电脑，电脑还没有系统，磁盘是空的。</li>
 </ol>
 <blockquote>
-<p>如果你是情况一那你可以输入：<br>ls /dev&emsp;&emsp;#我这里解释一下命令 ls 是查看后面那个文件下的文件的，在 linux 中常用/dev (device) 来存放设备文件，比如磁盘 打印机啥的，所以 ls /dev 的意思就是查看用于存放设备文件的目录下的所有目录</p>
+<p>如果你是情况一那你可以输入：<br>ls /dev&emsp;&emsp;#我这里解释一下命令在 linux 中常用/dev (device) 来存放设备文件，比如磁盘 打印机啥的，所以 ls /dev 的意思就是查看用于存放设备文件的目录下的所有目录</p>
 </blockquote>
-<p>进行查看，像那些 sda,sdb,sdc 的就是你的磁盘了，你可以再输入”cfdisk sda”或”cfdisk sdb”…以此类推。</p>
-<p>一个一个地来试，哪个盘有上有写 Freespace，那么那个区就是你之前再 windows 上压缩的区。</p>
+<p>如果你只有一块硬盘，且是机械硬盘的话，那你的磁盘名就是 sda，多块的话就是 sdb，sdc 啥的。如果你的是固态硬盘的话，那就是 nvme 啥啥啥的了。</p>
 <blockquote>
 <p>(名称含义:sda 是第一个磁盘，sdb 是第二个磁盘，以此类推，sda1 是 sda 磁盘的第一个分区 sdb2 是 sdb 磁盘的第二个分区，以此类推)<br>如果你是第二种情况</p>
 </blockquote>
-<p>如果你直接 cfdisk，那么你的指令其实是 cfdisk /dev/(你的/dev 文件下的第一和磁盘)，也就是说，你只能看到你的第一个磁盘。你也要按着情况一的方式来找到你的其他磁盘，如果你有三个磁盘，那么你的磁盘名就分别是 sda sdb sdc 以此类推，cfdisk /dev/sda 给你的第一块磁盘分区，cfdisk /dev/sdb 就是给你的第二个磁盘分区。</p>
 <p>这里我把 EFI 设为 sda1,<br>swap 为 sda2,<br>系统盘为 sda3</p>
 <p>看下面的 gif 动图来跟着我操作，很简单的</p>
 <p><img src="https://s2.ax1x.com/2020/01/27/1uFUZ6.gif" alt="1uFUZ6.gif"></p>
@@ -603,7 +601,7 @@ height:50vh;
             <p>原文作者：<a href="https://zrnown.github.io">ZRnown</a>
             <p>原文链接：<a href="https://zrnown.github.io/2020/01/01/hello-world/">https://zrnown.github.io/2020/01/01/hello-world/</a>
             <p>发表日期：<a href="https://zrnown.github.io/2020/01/01/hello-world/">January 1st 2020, 4:05:21 pm</a>
-            <p>更新日期：<a href="https://zrnown.github.io/2020/01/01/hello-world/">January 29th 2020, 5:50:09 pm</a>
+            <p>更新日期：<a href="https://zrnown.github.io/2020/01/01/hello-world/">January 30th 2020, 9:21:03 am</a>
             <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
