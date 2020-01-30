@@ -631,21 +631,6 @@ height:50vh;
     <!-- 评论插件 -->
     <!-- 来必力City版安装代码 -->
 
-    <div id="lv-container" data-id="city" data-uid= MTAyMC80ODQyOS8yNDkyMw==>
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
 <!-- City版安装代码已完成 -->
     
     
@@ -655,6 +640,104 @@ height:50vh;
 
     
     
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+<style>
+    .v .vwrap {
+        padding: 0 0 44px;
+    }
+
+    .v .veditor {
+        min-height: 7rem;
+        resize: none;
+    }
+
+    .v .vwrap .vedit {
+        padding-top: 0
+    }
+
+    .v .vwrap .vheader {
+        width: 80%;
+        bottom: 0;
+        position: absolute;
+        background: #f7f7f7;
+    }
+
+    .v .vinput {
+        padding: 10px 15px;
+    }
+
+    .v .vwrap .vheader .vinput {
+        border-bottom: 0px
+    }
+
+    .v .vwrap .vedit .vctrl {
+        margin-top: -44px;
+        right: 0;
+        position: absolute;
+        margin-right: -3px;
+    }
+
+    .v .vwrap .vcontrol {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 20%;
+        padding-top: 0px;
+    }
+
+    .v .vwrap .vcontrol .col.col-80 {
+        width:
+            100%;
+    }
+
+    .v .vbtn.vsubmit {
+        border-radius: 0;
+        padding: 0;
+        color: #fff;
+        line-height: 44px;
+        width: 100%;
+        border:
+            none;
+        background: rgb(241, 82, 86);
+    }
+
+    .v .vwrap .vedit .vctrl span.vpreview-btn,
+    .v .vwrap .vcontrol .col.col-20,
+    .v .vlist .vcard .vhead .vsys {
+        display: none;
+    }
+
+    @media screen and (max-width: 520px) {
+        .v .vwrap .vheader .vinput {
+            width: 33.33%;
+            padding: 10px 5px;
+        }
+    }
+</style>
+<div id="comment"></div>
+
+<script>
+    $(document).ready(function () {
+        $('.vemoji-btn').text('😀');
+        $("#vcomments").on('click', 'span.vat', function () {
+            $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+            $('textarea#veditor').focus();
+        })
+    })
+    new Valine({
+        el: '#comment',
+        notify: true,
+        verify: false,
+        appId: "R8e1nIPemBbxjqr51d8PjrhM-gzGzoHsz",
+        appKey: "14l2uC1ww69kOiIWz8AyBLUW",
+        placeholder: "ヾﾉ≧∀≦)o 只有添加昵称和邮箱才能留言哟！~",
+        path: window.location.pathname,
+        avatar: 'monsterid'
+    });
+</script>
 
     <!-- 评论 -->
 </main>
