@@ -357,21 +357,33 @@ height:50vh;
             <!-- 不可以删除，否则会调用post的layout  -->
 <main class="main about-page">
     <article class="article-entry">
-        <style>
-    img{
-        display: inline-block
-    }
-</style>
-
-<h1 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h1><p>&emsp;&emsp;你好！我是这个 Bolg 的作者，欢迎来到我的 Blog。<br>我目前是一名学生，平时喜欢玩电脑，追番，Ctrl+c Ctrl+v，以及和别人开麦对喷。</p>
+        <h1 id="自我介绍"><a href="#自我介绍" class="headerlink" title="自我介绍"></a>自我介绍</h1><p>  你好！我是这个 Bolg 的作者，欢迎来到我的 Blog。<br>我目前是一名学生，平时喜欢玩电脑，追番，Ctrl+c Ctrl+v，以及和别人开麦对喷。</p>
 <p>经常出没于：百度贴吧，BiliBili，Telegram，<del>Pornhub</del></p>
 <p>喜欢的东西：机械键盘，红烧肉</p>
-<p>喜欢的人：<font color=#3399ff size=40>雷姆</font></p>
-<p><img src="https://lh3.googleusercontent.com/87i4FpbdVaBOJqODsUL2baWjn7h4OErOzFuDHkbW4JKI0Vv0RYHl9JVklsjgGVytFfuraQ=s136" alt=""></p>
+<p>喜欢的人：<font color="#3399ff" size="40">雷姆</font></p>
+<p><img src="" data-echo="https://lh3.googleusercontent.com/87i4FpbdVaBOJqODsUL2baWjn7h4OErOzFuDHkbW4JKI0Vv0RYHl9JVklsjgGVytFfuraQ=s136" alt=""></p>
 <p>写 Blog 其实是想分享一下自己的日常生活，和总结一下自己的经验并分享给别人。</p>
 <p>有事情有问题可以联系我，欢迎添加友链！</p>
-<p>&emsp;&emsp;就酱。</p>
-
+<p>  就酱。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </article>
 </main>
             <!-- profile -->
@@ -568,9 +580,9 @@ height:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="Arch"><span class="iconfont-archer">&#xe606;</span>Arch</span>
-    
         <span class="sidebar-tag-name" data-tags="随心谈"><span class="iconfont-archer">&#xe606;</span>随心谈</span>
+    
+        <span class="sidebar-tag-name" data-tags="Arch"><span class="iconfont-archer">&#xe606;</span>Arch</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -638,7 +650,7 @@ jsonContent:
     </div>
     <!-- async load share.js -->
      
-    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/null"},"display":{"position":"left","width":200,"height":400},"mobile":{"show":false},"react":{"opacity":0.7},"log":false});</script></body>
 </html>
 
 
