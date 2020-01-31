@@ -145,7 +145,6 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
     <url>/2020/01/01/hello-world/</url>
     <content><![CDATA[<p><strong>尚未完成的 Arch 学习使用心得</strong></p>
 <a id="more"></a>
-
 <h1 id="Arch-的学习使用心得"><a href="#Arch-的学习使用心得" class="headerlink" title="Arch 的学习使用心得"></a>Arch 的学习使用心得</h1><h3 id="废话"><a href="#废话" class="headerlink" title="废话"></a>废话</h3><p>  以前看一些大佬用 Vim 感觉好爽的样子，劈里啪啦的命令行上输一大堆，就感觉 Linux 好有趣的样子，于是就试着在虚拟机上装一些 Linux，Centos Kali Arch manjaro Ubuntu 啊啥的感觉确实很有趣。<br><br></p>
 <p>输个 sudo apt-get install XXX 或 sudo pacman -S XXX 看着一堆小进度条在窗口上滑啊滑感觉特别爽。<br>于是就想着装个实体机玩玩，但是家里没有多余的电脑，于是就想装个双系统。<br><br></p>
 <p>中间也遇到了超级多的错误，经过大量的查资料看 wiki 问大佬，解决了很多问题。<strong>其中一个还让我卡了五天!难受死，我从头到尾装 Arch 装了有个五十次！</strong>所以说在这里把它给总结出来，以后再有问题会比较容易一些，也会有个参照。</p>
@@ -159,31 +158,31 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <p>你需要的工具：一个 4G 或 4G 以上的 U 盘，一台能联网的电脑。</p>
 </blockquote>
 <p>如果没有 U 盘可以去买一个，不是怎么贵，几包方便面的价钱。(废话，逃…)</p>
-<h4 id="下载系统镜像和磁盘刻录工具"><a href="#下载系统镜像和磁盘刻录工具" class="headerlink" title="下载系统镜像和磁盘刻录工具"></a>下载系统镜像和磁盘刻录工具</h4><p>首先，你得去<a href="http://blog.leanote.com/freewalk" target="_blank" rel="noopener">Archlinux</a>官网下载页面下载。如下图：<br><img src="https://s2.ax1x.com/2020/01/27/1nOaan.md.png" alt="1nOaan.md.png"></p>
+<h4 id="下载系统镜像和磁盘刻录工具"><a href="#下载系统镜像和磁盘刻录工具" class="headerlink" title="下载系统镜像和磁盘刻录工具"></a>下载系统镜像和磁盘刻录工具</h4><p>首先，你得去<a href="http://blog.leanote.com/freewalk" target="_blank" rel="noopener">Archlinux</a>官网下载页面下载。如下图：<br><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1nOaan.md.png" alt="1nOaan.md.png"></p>
 <p>那里有一个<strong>BitTorrent Download (recommended)</strong></p>
 <p>可以用磁力和种子下载，打开你的迅雷，咱随便挑一个下载。</p>
 <p>在下载过程中，咱要下个磁盘刻录工具，这里我使用的<a href="https://sourceforge.net/projects/usbwriter/" target="_blank" rel="noopener">USBWriter</a>，当然你也可以用<a href="https://rufus-usb.cn.uptodown.com/windows" target="_blank" rel="noopener">rufus</a>，看个人喜好。然后把它下下来。打开它，大概是这个样子，比较简陋，但五脏俱全。它上面英文差不多就是红字那个的意思，我给它翻译的一遍。</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1njIDe.png" alt="1njIDe.png"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1njIDe.png" alt="1njIDe.png"></p>
 <p>在你的 Archlinux 下载完毕后，你会发现有一个 iso 镜像文件，大概是这个样子，上头命名的格式为 <strong>名称-发布时间-支持位数.文件后缀</strong>(下面那个文件是我之前下的 manjaro，不要在意)</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1nXezT.png" alt="1nXezT.png"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1nXezT.png" alt="1nXezT.png"></p>
 <h4 id="制作系统安装介质"><a href="#制作系统安装介质" class="headerlink" title="制作系统安装介质"></a>制作系统安装介质</h4><p>这时候你要 插入 ♂ 你的 U 盘，不要太用力，主机和 U 盘会很爽 ♂ 的。然后你需要打开你的 USBWriter(咱刚下的内个，我用 USBWriter 来演示)或者 rufus。</p>
 <p>再看着这个图片，首先我们要点那个浏览，然后选中你刚才下载的 iso 镜像文件。然后再点一下目标设备那个框框最右边的小玩意，然后下面应该能看到你的 U 盘。</p>
 <p>选中它，如果没有出现，那你再检查检查有没有插好电脑有没有识别，点一下刷新。</p>
 <p>完事儿之后，你再点一下那个写入，等它蹦出来个框提示你写入完毕后，你的系统 U 盘算是做好了。</p>
 <p>做好之后，你可能发现你的电脑识别不出你的 U 盘了，你也不要惊慌，虽然我也不知道啥回事儿。。。但没啥大问题</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1njIDe.png" alt="1njIDe.png"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1njIDe.png" alt="1njIDe.png"></p>
 <h4 id="查看主板热键"><a href="#查看主板热键" class="headerlink" title="查看主板热键"></a>查看主板热键</h4><p>然后你要明白一个东西。你的主板进入系统 U 盘的方式，你必须要知道你的主板是什么牌子的，可以自己去下个鲁大师看看。</p>
 <p>知道了主板型号后再看下面这图，找到你主板进入系统 U 的方式，我的主板是微星的，所以在重启以后要狂撸 F11 键，进入选择菜单。</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1nvHLF.png" alt="1nvHLF.png"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1nvHLF.png" alt="1nvHLF.png"></p>
 <p>知道以后，再重启，重启时狂按你主板的那个热键。</p>
 <p>不一会你会看见一个选择菜单，我的是这样的，不知道你的是个啥子样，选择你的 U 盘，我的 U 盘是金士顿的 4G，所以我选择底下的那个</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1nzFXT.jpg" alt="1nzFXT.jpg"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1nzFXT.jpg" alt="1nzFXT.jpg"></p>
 <p>完事儿以后，你会看到 Archlinux 的安装界面，选第一个(键盘 Enter 选择，小键盘上下移动)。选完之后它会跳出来一堆一堆的字儿，我感觉看着挺爽。</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1nz3nO.png" alt="1nz3nO.png"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1nz3nO.png" alt="1nz3nO.png"></p>
 <p>稀里哗啦的字儿跳完之后，你会来到这样一个界面，这叫 liveCD。</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1nzQc6.png" alt="1nzQc6.png"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1nzQc6.png" alt="1nzQc6.png"></p>
 <p>输入 fdisk -l 检查磁盘状态，你应该可以在上面找到你的磁盘。我的是这样的，讲个小秘密：我是用虚拟机演示的，但是和你的实体机应该差不多。</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1nzljK.png" alt="1nzljK.png"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1nzljK.png" alt="1nzljK.png"></p>
 <h5 id="将磁盘分区"><a href="#将磁盘分区" class="headerlink" title="将磁盘分区"></a>将磁盘分区</h5><p>接下来的操作就是让你分几个区<br>我们这里要分一个 EFI system<br>一个 swap<br>一个系统盘</p>
 <blockquote>
 <p>EFI system : EFI 是引导分区，它在你磁盘的最前面，每次开机最先被磁头读写到。我把 Archlinux 比作景点，引导分区比作导游，你想要进入景点必须要有导游带着你啊对吧。在你电脑开机以后，你的导游(引导分区)带你进景点(Archlinux)。如果没有导游你就无法进入景区。<br>Swap : Swap 分区（即交换区）在系统的物理内存不够用的时候，把硬盘空间中的一部分空间释放出来，以供当前运行的程序使用。那些被释放的空间可能来自一些很长时间没有什么操作的程序，这些被释放的空间被临时保存到 Swap 分区中，等到那些程序要运行时，再从 Swap 分区中恢复保存的数据到内存中。<br>转自:<a href="https://www.jianshu.com/p/a2d2f284fc0a；" target="_blank" rel="noopener">https://www.jianshu.com/p/a2d2f284fc0a；</a> 作者：jnxc1888 来源：简述<br>系统盘：那系统盘当然是存放你使用的软件和系统的咯</p>
@@ -204,14 +203,14 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 </blockquote>
 <p>这里我把 EFI 设为 sda1,<br>swap 为 sda2,<br>系统盘为 sda3</p>
 <p>看下面的 gif 动图来跟着我操作，很简单的</p>
-<p><img src="https://s2.ax1x.com/2020/01/27/1uFUZ6.gif" alt="1uFUZ6.gif"></p>
+<p><img src="" data-echo="https://s2.ax1x.com/2020/01/27/1uFUZ6.gif" alt="1uFUZ6.gif"></p>
 <p>看见了没？以上我首先输入了 cfdisk，因为我用的是虚拟机只有一个磁盘，你有多个磁盘的话就先查看一下在 cfdisk /dev/你的磁盘名。</p>
 <p>然后我又选择了 gpt，接着我 new 了一个分区，想用于引导系统，但是此时它只是一个普通的 linux 区，所以你要更改他的类别，选择 Type，再选择 EFI system。</p>
 <p>接着你需要再分一个 swap 和一个系统盘。</p>
 <p>最后不要选择每个分区再选择 write 输入 yes 并回车。</p>
 <p>分完三个区就可以 Quit 来退出了！</p>
 <h4 id="格式化分区"><a href="#格式化分区" class="headerlink" title="格式化分区"></a>格式化分区</h4><p>首先输入 fdisk -l 来查看你的分区情况，然后你可以找到你的分区情况。你可以看见我的是这样的。</p>
-<p><img src="https://pic.downk.cc/item/5e2eab732fb38b8c3cacae0e.png" alt=""></p>
+<p><img src="" data-echo="https://pic.downk.cc/item/5e2eab732fb38b8c3cacae0e.png" alt=""></p>
 <p>看到了吧，我的/dev/sdb1 是 EFI 分区；/dev/sdb2 是 swap 分区；/dev/sdb3 是系统分区</p>
 <p>现在要 mkfs.ext4 /dev/sdb3 以 ext4 格式来格式化系统分区<br>mkfs.fat -F32 /dev/sdb1 以 fat 格式化 EFI 分区<br>再 mkswap /dev/sdb2 格式化 swap 盘<br>接着启用 SWAP 分区 swapon /dev/sdb2</p>
 <p>再挂载 linux 系统分区到根目录</p>
@@ -219,24 +218,20 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <p>然后建立启动目录 mkdir -p /mnt/boot/efi</p>
 <p>接下来把 EFI 分区挂载到启动目录下 ： mount /dev/sdb1 /mnt/boot/efi</p>
 <p>接着使用 vim 更改镜像源以达到加速目的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131093454.png" alt=""></p>
+<p><img src="" data-echo="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131093454.png" alt=""></p>
 <p>vim /etc/pacman.d/mirrorlist</p>
 <p>操作：进入文件后按/China 回车 v 然后选择 China 源的所有， d 然后回到最上面，p。重复操作八次。<br>这个是 Vim 的操作，不懂的话可以百度看看，也就是用到了查找复制粘贴移动<br>| 按键   | 功能                                 |<br>| —— | ———————————— |<br>| /China | 在文件中查找 China                   |<br>| v      | 进入可视化模式，移动上下左右可以选中 |<br>| d      | 剪切选中的内容                       |<br>| p      | 粘贴剪切板内的内容                   |<br>| j      | 向下移动                             |<br>| k      | 向上移动                             |<br>| h      | 向左移动                             |<br>| l      | 向右移动                             |</p>
 <p>接着再安装系统</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">pacstrap /mnt base linux base-devel</span><br><span class="line"></span><br><span class="line"># 需要在网络环境下安装！</span><br><span class="line"></span><br><span class="line"># 安装完成后输入</span><br><span class="line"></span><br><span class="line">genfstab /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line"></span><br><span class="line">arch-chroot /mnt # 离开liveCD切换到linux系统</span><br></pre></td></tr></tbody></table></figure>
-
 <p>双系统需要安装 os-prober 以及 ntfs-3g 后 grub 生成引导入口时就会检测出 Win10</p>
 <p>用包管理器 pacman 下载个 vim 或 neovim 方便调试，下载 dhcpcd 不然重启以后无法动态分配 IP 而导致没网无法安装桌面环境，再下个 intel-ucode(如果你是 intel 的 CPU 的话) 有双系统需求要下 os-prober</p>
 <p>必须下 efibootmgr 和 grub</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">pacman -S vim neovim dhcpcd intel-ucode os-prober efibootmgr grub</span><br></pre></td></tr></tbody></table></figure>
-
 <p>安装完成后</p>
 <p>输入</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">grub-install --force --recheck /dev/sda</span><br><span class="line"></span><br><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></tbody></table></figure>
-
 <p>如果</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">warning failed to connect to lvmetad，falling back to device scanning</span><br></pre></td></tr></tbody></table></figure>
-
 <p>。vim /etc/lvm/lvm.conf,找到 use_lvmetad = 1 将 1 修改为 0，保存，重新配置 grub。</p>
 <p>输入 systemctl enable dhcpcd.service 来获取 dhcp 动态分配 ip 地址服务<br>再输入 exit 退出系统</p>
 <p>使用 umount -R /mnt 卸载已挂载的分区</p>
@@ -249,33 +244,25 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <p>创建 hostname：</p>
 <p>vim /etc/hostname<br>输入 hostname</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">127.0.0.1 localhost</span><br><span class="line">::1 localhost</span><br><span class="line">127.0.1.1 主机名.localdomain 主机名</span><br></pre></td></tr></tbody></table></figure>
-
 <h4 id="中文字体设置"><a href="#中文字体设置" class="headerlink" title="中文字体设置"></a>中文字体设置</h4><p>vim /etc/locale.gen 找到 en_US.UTF-8 和 zh_CN.UTF-8 去掉#:wq</p>
 <p>再刷新区域信息 locale-gen</p>
 <p>将区域信息写入 locale.conf 文件：echo LANG=en_US.UTF-8 &gt; /etc/locale.conf</p>
 <p>需要说明：这里可以设置成中文，但是 locale.conf 文件是全局设置，在这里设成<br>中文或者其他非英语环境，桌面环境下会正常显示，但是命令行模式下会变成乱码。中文的问题在后面用其他方法解决。</p>
 <h4 id="时区设置"><a href="#时区设置" class="headerlink" title="时区设置"></a>时区设置</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</span><br><span class="line"></span><br><span class="line">hwclock --systohc --utc</span><br><span class="line"></span><br><span class="line">timedatectl set-ntp true</span><br></pre></td></tr></tbody></table></figure>
-
 <h4 id="系统本地化设置"><a href="#系统本地化设置" class="headerlink" title="系统本地化设置"></a>系统本地化设置</h4><p>至少需要一种中文字体：pacman -S wqy-microhei<br>vim ~/.xprofile<br>输入</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">export LANG=zh_CN.UTF-8</span><br><span class="line">export LANGUAGE=zh_CN:en_US</span><br><span class="line">export LC_CTYPE=en_US.UTF-8</span><br></pre></td></tr></tbody></table></figure>
-
 <p>再 cp ~/.xprofile /home/你的用户名</p>
 <h4 id="桌面环境安装"><a href="#桌面环境安装" class="headerlink" title="桌面环境安装"></a>桌面环境安装</h4><p>输入 pacman -S xorg xterm xorg-xinit sddm wqy-zenhei wqy-microhei plasma kde-applications xdg-user-dirs 坐等下载</p>
 <p>下载完成之后开启服务</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">xdg-user-dirs-update</span><br><span class="line"></span><br><span class="line">sddm --example-config &gt;/etc/sddm.conf</span><br><span class="line"></span><br><span class="line">systemctl enable sddm.service</span><br></pre></td></tr></tbody></table></figure>
-
 <h4 id="vmware-tools-快速安装"><a href="#vmware-tools-快速安装" class="headerlink" title="vmware tools 快速安装"></a>vmware tools 快速安装</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">1. git clone https://github.com/rasa/vmware-tools-patches.git</span><br><span class="line">2. cd vmware-tools-patches</span><br><span class="line">3. ./patched-open-vm-tools.sh</span><br></pre></td></tr></tbody></table></figure>
-
 <h2 id="疑难解答篇"><a href="#疑难解答篇" class="headerlink" title="疑难解答篇"></a>疑难解答篇</h2><h3 id="U-盘启动盘如何恢复原样"><a href="#U-盘启动盘如何恢复原样" class="headerlink" title="U 盘启动盘如何恢复原样"></a>U 盘启动盘如何恢复原样</h3><p>Windows 中右键此电脑，选择管理，打开磁盘管理，在右下角记住你的 U 盘的名称，假设我的 U 盘是磁盘 2<br>Win+R 键，输入 cmd 并打开，输入 diskpart 打开另一个命令行。<br>select disk 2 选择到你的 U 盘<br>并输入 clean。<br>清除成功，再在管理界面右键你的 U 盘，新建简单卷<br>之后再格式化磁盘<br>成功！</p>
 <h4 id="虚拟机无法更改分辨率解决方案"><a href="#虚拟机无法更改分辨率解决方案" class="headerlink" title="虚拟机无法更改分辨率解决方案"></a>虚拟机无法更改分辨率解决方案</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">1.pacman -S xorg xorg-xinit xf86-video-vesa xf86-video-vmware  xf86-input-vmmouse open-vm-tools gtkmm</span><br><span class="line"></span><br><span class="line">2.systemctl enable vmtoolsd.service vmware-vmblock-fuse.service</span><br><span class="line"></span><br><span class="line">3.reboot</span><br></pre></td></tr></tbody></table></figure>
-
 <h4 id="git-出现-443-解决方案"><a href="#git-出现-443-解决方案" class="headerlink" title="git 出现 443 解决方案"></a>git 出现 443 解决方案</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></tbody></table></figure>
-
 <p>然后</p>
 <p>vim /etc/hosts</p>
 <p>输入：</p>
 <figure class="highlight plain"><figcaption><span>localhost</span></figcaption><table><tbody><tr><td class="code"><pre><span class="line">::1 localhost</span><br><span class="line">127.0.1.1 a.localdomain a（原有hosts配置）</span><br><span class="line">192.30.253.112 github.com</span><br><span class="line">151.101.88.249 github.global.ssl.fastly.net</span><br><span class="line">192.30.253.113    github.com</span><br><span class="line">192.30.252.131 github.com</span><br><span class="line">185.31.16.185 github.global.ssl.fastly.net</span><br><span class="line">74.125.237.1 dl-ssl.google.com</span><br><span class="line">173.194.127.200 groups.google.com</span><br><span class="line">192.30.252.131 github.com</span><br><span class="line">185.31.16.185 github.global.ssl.fastly.net</span><br><span class="line">74.125.128.95 ajax.googleapis.com</span><br><span class="line">151.101.76.249 http://global-ssl.fastly.net</span><br><span class="line">192.30.255.112 http://github.com  #此处112还是113根据自己的情况调整 方法:ping 一下github，会有显示)</span><br></pre></td></tr></tbody></table></figure>
-
 <h3 id="开机显示-can’t-access-tty-job-control-turned-off，无法进入图形化界面"><a href="#开机显示-can’t-access-tty-job-control-turned-off，无法进入图形化界面" class="headerlink" title="开机显示 can’t access tty job control turned off，无法进入图形化界面"></a>开机显示 can’t access tty job control turned off，无法进入图形化界面</h3><p>挺重要的之前遇到过三次</p>
 <p>可使用 fsck 手动修复，不过 fsck 坑比较多，谨慎使用，详细了解命令并慎重考虑后再使用</p>
 <p>格式：fsck.ext4 /dev/损坏的分区(ext4 为文件系统)<br>一路 yes</p>
@@ -285,13 +272,10 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <p><strong>解决方案</strong>：<em>换 DNS</em></p>
 <p>vim /etc/resolv.conf</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">nameserver 223.6.6.6</span><br><span class="line">nameserver 8.8.8.8</span><br></pre></td></tr></tbody></table></figure>
-
 <h2 id="使用方法篇"><a href="#使用方法篇" class="headerlink" title="使用方法篇"></a>使用方法篇</h2><h4 id="pacman-删除软件包"><a href="#pacman-删除软件包" class="headerlink" title="pacman 删除软件包"></a>pacman 删除软件包</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#删除单个软件包，保留其全部已经安装的依赖关系</span><br><span class="line"></span><br><span class="line">pacman -R package_name</span><br><span class="line"></span><br><span class="line">#删除指定软件包，及其所有没有被其他已安装软件包使用的依赖关系：</span><br><span class="line"></span><br><span class="line">pacman -Rs package_name</span><br><span class="line"></span><br><span class="line">#要删除软件包和所有依赖这个软件包的程序:</span><br><span class="line"></span><br><span class="line">pacman -Rsc package_name</span><br><span class="line"></span><br><span class="line">#警告: 此操作是递归的，请小心检查，可能会一次删除大量的软件包。</span><br><span class="line"></span><br><span class="line">#要删除软件包，但是不删除依赖这个软件包的其他程序：</span><br><span class="line"></span><br><span class="line">pacman -Rdd package_name</span><br><span class="line"></span><br><span class="line">#pacman 删除某些程序时会备份重要配置文件，在其后面加上*.pacsave扩</span><br><span class="line">展名。-n 选项可以删除这些文件：</span><br><span class="line"></span><br><span class="line">pacman -Rn package_name</span><br><span class="line"></span><br><span class="line">pacman -Rsn package_name</span><br></pre></td></tr></tbody></table></figure>
-
 <h4 id="AUR-的使用"><a href="#AUR-的使用" class="headerlink" title="AUR 的使用"></a>AUR 的使用</h4><p>编辑/etc/pacman.conf with your favorite editor</p>
 <p>在文件最后添加如下内容：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[archlinuxcn]</span><br><span class="line"></span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line"></span><br><span class="line">Server = http://mirrors.163.com/archlinux-cn/$arch</span><br></pre></td></tr></tbody></table></figure>
-
 <p>保存退出刷新 pacman 数据库 sudo pacman -Syy</p>
 <p>安装中文源密钥：</p>
 <p>sudo pacman -S archlinuxcn-keyring</p>
@@ -299,30 +283,24 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <p>Yaourt 不可使用可以更换镜像源再 sudo pacman -Syy</p>
 <h4 id="SSR-须知"><a href="#SSR-须知" class="headerlink" title="SSR 须知"></a>SSR 须知</h4><p>安装：<br>需要本地 git 环境</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">yum install -y git</span><br><span class="line"></span><br><span class="line">git clone https://github.com/SAMZONG/gfwlist2privoxy.git</span><br><span class="line"></span><br><span class="line">cd gfwlist2privoxy/</span><br><span class="line"></span><br><span class="line">mv ssr /usr/local/bin</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/ssr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ssr install</span><br></pre></td></tr></tbody></table></figure>
-
 <p>启动/关闭</p>
 <p>ssr start</p>
 <p>ssr stop</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">[root@localhost ~]# ssr config   # 配置文件路径 /usr/local/share/shadowsocksr/config.json</span><br><span class="line">{</span><br><span class="line">    "server": "0..0.0.0", // ssr服务器ip</span><br><span class="line">    "server_ipv6": "::",</span><br><span class="line">    "server_port": 8080, // ssr服务器端口</span><br><span class="line">    "local_address": "127.0.0.1",</span><br><span class="line">    "local_port": 1080,</span><br><span class="line"></span><br><span class="line">    "password": "123456",  // 对应password</span><br><span class="line">    "method": "none",   // 这里对应SSGlobal配置中的Encryption</span><br><span class="line">    "protocol": "auth_chain_a",  //对应protocl</span><br><span class="line">    "protocol_param": "",</span><br><span class="line">    "obfs": "http_simple",  //对应obfs</span><br><span class="line">    "obfs_param": "hello.world", //对应obfs_param</span><br><span class="line">    "speed_limit_per_con": 0,</span><br><span class="line">    "speed_limit_per_user": 0,</span><br><span class="line"></span><br><span class="line">    "additional_ports" : {}, // only works under multi-user mode</span><br><span class="line">    "additional_ports_only" : false, // only works under multi-user mode</span><br><span class="line">    "timeout": 120,</span><br><span class="line">    "udp_timeout": 60,</span><br><span class="line">    "dns_ipv6": false,</span><br><span class="line">    "connect_verbose_info": 0,</span><br><span class="line">    "redirect": "",</span><br><span class="line">    "fast_open": false</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-
 <h4 id="git-须知"><a href="#git-须知" class="headerlink" title="git 须知"></a>git 须知</h4><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">#初始化为git仓库:</span><br><span class="line">git init</span><br><span class="line">#添加要提交的文件:</span><br><span class="line">git add 文件名</span><br><span class="line">git rm --cache 文件名  删除缓存区内容</span><br><span class="line">#查看当前缓存区状态</span><br><span class="line">git status</span><br><span class="line">#本次提交说明:</span><br><span class="line">git commit -m "Description" 文件名</span><br><span class="line">#推送本次提交到仓库:</span><br><span class="line">git push origin master(分支名)</span><br><span class="line">#关联Github远程仓库：</span><br><span class="line">git remote add origin 仓库地址（没有添加ssh key建议使用 https地址）</span><br><span class="line">#用户名git config --global user.name [username]</span><br><span class="line">#邮箱设置git config --global user.email [email]</span><br></pre></td></tr></tbody></table></figure>
-
 <p>可是当你第一次 push 的时候一般会遇到如下报错：<br>这种错误的主要原因是你的远程仓库的内容有改动但是你本地并没有拉去最新的代码所以会报错。</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$ git push origin master</span><br><span class="line">To https://github.com/yuanchao614/wecoder.git</span><br><span class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</span><br><span class="line">error: failed to push some refs to 'https://github.com/yuanchao614/wecoder.git'</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: 'git pull ...') before pushing again.</span><br><span class="line">hint: See the 'Note about fast-forwards' in 'git push --help' for details.</span><br></pre></td></tr></tbody></table></figure>
-
 <blockquote>
 <p>解决方案： git pull origin master –allow-unrelated-histories</p>
 </blockquote>
 <p>然后建议做完上一步之后再重新：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line"></span><br><span class="line">git commit -m '提交说明'</span><br><span class="line"></span><br><span class="line">git push origin master</span><br></pre></td></tr></tbody></table></figure>
-
-<h2 id="美化篇"><a href="#美化篇" class="headerlink" title="美化篇"></a>美化篇</h2><h4 id="vim-Plug-安装"><a href="#vim-Plug-安装" class="headerlink" title="vim-Plug 安装"></a>vim-Plug 安装</h4><p>curl -fLo ~/.vim/autoload/plug.vim –create-dirs <br> <a href="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" target="_blank" rel="noopener">https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</a><br>使用：</p>
+<h2 id="美化篇"><a href="#美化篇" class="headerlink" title="美化篇"></a>美化篇</h2><h4 id="vim-Plug-安装"><a href="#vim-Plug-安装" class="headerlink" title="vim-Plug 安装"></a>vim-Plug 安装</h4><p>curl -fLo ~/.vim/autoload/plug.vim –create-dirs \<br> <a href="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" target="_blank" rel="noopener">https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</a><br>使用：</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">call plug#begin('~/.vim/plugged')</span><br><span class="line"></span><br><span class="line">Plug 'vim-airline/vim-airline'</span><br><span class="line"></span><br><span class="line">call plug#end()</span><br></pre></td></tr></tbody></table></figure>
-
 <p>说明：在~/.vimrc 中插入以上片段，在 call 内输入 Plug ‘地址’<br>再:PlugInstall 即可安装</p>
 <p>命令：PlugInstall<br>PlugClean</p>
 <h2 id="插件推荐篇"><a href="#插件推荐篇" class="headerlink" title="插件推荐篇"></a>插件推荐篇</h2><h3 id="常用-vscode-插件以及使用方法"><a href="#常用-vscode-插件以及使用方法" class="headerlink" title="常用 vscode 插件以及使用方法"></a>常用 vscode 插件以及使用方法</h3><h4 id="Markdown-All-in-One"><a href="#Markdown-All-in-One" class="headerlink" title="Markdown All in One"></a>Markdown All in One</h4><p>支持以下功能 + 快捷键</p>
-<p>按下 shift + command + p 可以查看。<br><img src="https://user-gold-cdn.xitu.io/2019/1/21/168705bae7bd1ed7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"><br>| 键位             | 功能             |<br>| —————- | —————- |<br>| Ctrl + B         | 切换粗体         |<br>| Ctrl + I         | 切换斜体         |<br>| Alt + S          | 切换下划线       |<br>| Ctrl + Shift + ] | 标题升级         |<br>| Ctrl + Shift + [ | 标题降级         |<br>| Ctrl + M         | 切换数学环境     |<br>| Alt + C          | 选中/不选中任务  |<br>| Ctrl + Shift + V | 切换预览         |<br>| Ctrl + K V       | 将预览切换到侧边 |</p>
+<p>按下 shift + command + p 可以查看。<br><img src="" data-echo="https://user-gold-cdn.xitu.io/2019/1/21/168705bae7bd1ed7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"><br>| 键位             | 功能             |<br>| —————- | —————- |<br>| Ctrl + B         | 切换粗体         |<br>| Ctrl + I         | 切换斜体         |<br>| Alt + S          | 切换下划线       |<br>| Ctrl + Shift + ] | 标题升级         |<br>| Ctrl + Shift + [ | 标题降级         |<br>| Ctrl + M         | 切换数学环境     |<br>| Alt + C          | 选中/不选中任务  |<br>| Ctrl + Shift + V | 切换预览         |<br>| Ctrl + K V       | 将预览切换到侧边 |</p>
 <p>我在 arch 上装过的工具：ranger zsh git neovim yum yay yaourt oh-my-zsh fzf</p>
 <blockquote>
 <p>这几个图床还挺好用:</p>
