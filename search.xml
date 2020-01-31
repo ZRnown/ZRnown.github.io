@@ -3,13 +3,13 @@
   <entry>
     <title>新买的ikbc poker</title>
     <url>/2020/01/30/ikbc-poker/</url>
-    <content><![CDATA[<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/FC99987B50FABBD670F57F0D8764AD95.jpg" alt=""></p>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131094254.png" alt=""></p>
 <p>前几天买的ikbc poker升级版</p>
 <a id="more"></a>
 
 <p>就是上面了，4不4挺漂亮？</p>
 <p>我在京东上买的，原价399让我285买到了，京东活动+店家活动+白条减价，就这么叠加过来的🤣。下面来说说我的使用感受8。</p>
-<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/7.jpg" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131094318.png" alt=""></p>
 <p>首先，这是我第一次玩机械键盘，还有很多东西不太懂，如果你知道的话，可以在评论区留言。</p>
 <p>首先我感觉它既有缺点又有优点。缺点非常明显，优点也非常明显。</p>
 <blockquote>
@@ -18,7 +18,7 @@
 <li>缺点<br>这个缺点是最让我难受的，就是大键的卫星轴太太太太肉了，按着太难受了。真不知道怎么办才好，而且这些大键还要经常用到！就下面。</li>
 </ol>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130161014.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131094344.png" alt=""></p>
 <p>就是这个左Shift，太太太太难受了。真的难受到无法形容，感觉还没薄膜键盘舒服，但是也稍微能理解，毕竟这键盘也算是中低端的。但是看贴吧上说，这个问题好像可以用润滑油来解决？其实我也不是特别清楚，以后有时间会研究研究。</p>
 <blockquote>
 <p>总结：就总体而言，其实还是挺满意的，而且就在这种发瘟的特殊时期，快递还跑，太敬业了，点赞👍。</p>
@@ -53,46 +53,43 @@
 <p>  当你写 markdown 时有没有发现 Chrome 开个图床，既浪费内存又麻烦不便捷？如果是这样，那说明你肯定需要这个！</p>
 </blockquote>
 <a id="more"></a>
-<p><img src="" data-echo="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131093154.png" alt=""></p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131093154.png" alt=""></p>
 <h2 id="废话"><a href="#废话" class="headerlink" title="废话"></a>废话</h2><p>  对，这就是超 6 的用于快速上传图片并获取图片 URL 链接的工具(官方是这么解释的)它叫<a href="https://molunerfinn.com/PicGo/" target="_blank" rel="noopener">PicGO</a></p>
 <p>  有了它，你可以通过快捷键快速把剪切板里的图片上传到图床上，然后 markdown 格式的图片会呗拷贝到你的剪切板里，没错，你只需要敲快捷键然后你就可以快速为你的 markdown 文档添加图片 🌶！4 不 4 很厉害。</p>
 <p>  这是他的<a href="https://picgo.github.io/PicGo-Doc/zh/guide/#%E5%BA%94%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="noopener">官方文档</a>，看了这个你就会使用 🌶！但是如果你不想点的话，接下来我会教你创建 github 图床和如何使用它！</p>
 <h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h2><p>我目前使用的是 github 图床，挺方便挺好用，速度也跟得上(就个人而言)<br>不废话了，明明进入了正题却还没开始 😒</p>
 <h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><p>你可以在<a href="https://molunerfinn.com/PicGo/" target="_blank" rel="noopener">PicGO</a>这里下载，目前我这里的最新版本是 2.2.2(很 2 对吧)，下载方法很简单，点点点就是了。</p>
-<h4 id="github-账号注册"><a href="#github-账号注册" class="headerlink" title="github 账号注册"></a>github 账号注册</h4><p>下载完事儿你不用管，咱先得有个 github 账号，如果你已经有了你可以跳到下一步。<br>注册方法很简单。</p>
-<p>打开 <a href="http://www.gitub.com。" target="_blank" rel="noopener">www.gitub.com。</a></p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130101132.png" alt=""></p>
-<p>对，就这样，右上角有一个 Sign up(注册)，点进去</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130101250.png" alt=""></p>
-<p>这里分别输入你的用户名邮箱密码，确认之后会发给你个验证码，你验证后就完事儿了。</p>
+<h4 id="github-账号注册"><a href="#github-账号注册" class="headerlink" title="github 账号注册"></a>github 账号注册</h4><p>这个自己注册应该都没问题吧。</p>
 <h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4><p>首先这里你要 new 个仓库，看下图左上角有个 new，点进去。</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130101456.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130101456.png" alt=""></p>
 <p>然后再照着我图上的输就行了。这是在创建个仓库用于存放图片。然后你要记住你的仓库名，仓库名=Owner/Repository name。我的用户名是 ZRnown，Respository name 是 Picgo，那仓库名就是 ZRnown/Picgo 了，这个要注意，等下会用到。</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130101832.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130101832.png" alt=""></p>
 <h4 id="创建-token"><a href="#创建-token" class="headerlink" title="创建 token"></a>创建 token</h4><p>你现在有个空仓库了，你现在要复制你现在的浏览器地址栏上的地址（等下要用上），然后点你的头像，再点 settings</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102111.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102111.png" alt=""></p>
 <p>再分别点 Developer settings，和 Personal access tokens。</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102149.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102149.png" alt=""></p>
 <p>点击 Generate new token 创建 token</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102507.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102507.png" alt=""></p>
 <p>然后名字填个 PicGo，咱暴力点，底下全点满 🤣，再 Generate token 就完事儿了咱。</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102647.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102647.png" alt=""></p>
 <p>完事之后别急着离开，复制一下这一堆看不懂的东西。</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130103502.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130103502.png" alt=""></p>
 <!-- C:\Program Files (x86)\Microsoft Visual Studio\2017\Community
 C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <!-- C:\Program Files (x86)\Microsoft Visual Studio\Shared -->
+
 <h4 id="PicGO-配置"><a href="#PicGO-配置" class="headerlink" title="PicGO 配置"></a>PicGO 配置</h4><p>点开咱刚下载的 PicGO，你会看到是这样的。</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102853.png" alt=""><br>咱先点击 PicGo 设置。</p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130102853.png" alt=""><br>咱先点击 PicGo 设置。</p>
 <p>点击修改快捷键，这里我使用的是 Ctrl+Shift+c，你可以挑个你喜欢的快捷键。</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130103045.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130103045.png" alt=""></p>
 <p>接着咱来设置图床，点击图床设置，再点击 github 图床。</p>
 <blockquote>
 <p>这里仓库名填<a href="#创建仓库">创建仓库</a>，那一步的仓库名，分支名默认填 master，token 填刚才新建 token 那里的一些看不懂的东西。指定路径随便填，你也可以像我这样填 img/，这样你上传图片的时候，它会在你的 github 仓库下创建一个 img 文件夹，然后在里面存放你的图片。设定自定义域名就是 <a href="https://raw.githubusercontent.com/你的用户名/仓库名/master。" target="_blank" rel="noopener">https://raw.githubusercontent.com/你的用户名/仓库名/master。</a> 我的是 <a href="https://raw.githubusercontent.com/ZRnown/Picture/master，然后点设为默认图床并确认。完事儿了咱！" target="_blank" rel="noopener">https://raw.githubusercontent.com/ZRnown/Picture/master，然后点设为默认图床并确认。完事儿了咱！</a></p>
 </blockquote>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130103407.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130103407.png" alt=""></p>
 <p>以后在你复制一个图片并敲上你的快捷键之后，就会有如下提示。然后你再直接 Ctrl+v，它自己就会把 markdown 格式的图片粘贴出来，是不是超爽超方便！！！</p>
-<p><img src="" data-echo="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130104818.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/20200130104818.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -225,9 +222,9 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <p>然后建立启动目录 mkdir -p /mnt/boot/efi</p>
 <p>接下来把 EFI 分区挂载到启动目录下 ： mount /dev/sdb1 /mnt/boot/efi</p>
 <p>接着使用 vim 更改镜像源以达到加速目的</p>
-<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/Ram.gif" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131093454.png" alt=""></p>
 <p>vim /etc/pacman.d/mirrorlist</p>
-<p>操作：进入文件后按/China 回车 v 然后选择 China 源的所有， d 然后回到最上面，p。重复操作八次。<br>这个是 Vim 的操作，不懂的话可以百度看看，也就是用到了查找复制粘贴移动<br>| 按键 | 功能 |<br>| —— | ———————————— |<br>| /China | 在文件中查找 China |<br>| v | 进入可视化模式，移动上下左右可以选中 |<br>| d | 剪切选中的内容 |<br>| p | 粘贴剪切板内的内容 |<br>| j | 向下移动 |<br>| k | 向上移动 |<br>| h | 向左移动 |<br>| l | 向右移动 |</p>
+<p>操作：进入文件后按/China 回车 v 然后选择 China 源的所有， d 然后回到最上面，p。重复操作八次。<br>这个是 Vim 的操作，不懂的话可以百度看看，也就是用到了查找复制粘贴移动<br>| 按键   | 功能                                 |<br>| —— | ———————————— |<br>| /China | 在文件中查找 China                   |<br>| v      | 进入可视化模式，移动上下左右可以选中 |<br>| d      | 剪切选中的内容                       |<br>| p      | 粘贴剪切板内的内容                   |<br>| j      | 向下移动                             |<br>| k      | 向上移动                             |<br>| h      | 向左移动                             |<br>| l      | 向右移动                             |</p>
 <p>接着再安装系统</p>
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">pacstrap /mnt base linux base-devel</span><br><span class="line"></span><br><span class="line"># 需要在网络环境下安装！</span><br><span class="line"></span><br><span class="line"># 安装完成后输入</span><br><span class="line"></span><br><span class="line">genfstab /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line"></span><br><span class="line">arch-chroot /mnt # 离开liveCD切换到linux系统</span><br></pre></td></tr></tbody></table></figure>
 
@@ -328,7 +325,7 @@ C:\ProgramData\Microsoft\VisualStudio\Packages -->
 <p>说明：在~/.vimrc 中插入以上片段，在 call 内输入 Plug ‘地址’<br>再:PlugInstall 即可安装</p>
 <p>命令：PlugInstall<br>PlugClean</p>
 <h2 id="插件推荐篇"><a href="#插件推荐篇" class="headerlink" title="插件推荐篇"></a>插件推荐篇</h2><h3 id="常用-vscode-插件以及使用方法"><a href="#常用-vscode-插件以及使用方法" class="headerlink" title="常用 vscode 插件以及使用方法"></a>常用 vscode 插件以及使用方法</h3><h4 id="Markdown-All-in-One"><a href="#Markdown-All-in-One" class="headerlink" title="Markdown All in One"></a>Markdown All in One</h4><p>支持以下功能 + 快捷键</p>
-<p>按下 shift + command + p 可以查看。<br><img src="https://user-gold-cdn.xitu.io/2019/1/21/168705bae7bd1ed7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"><br>| 键位 | 功能 |<br>| —————- | —————- |<br>| Ctrl + B | 切换粗体 |<br>| Ctrl + I | 切换斜体 |<br>| Alt + S | 切换下划线 |<br>| Ctrl + Shift + ] | 标题升级 |<br>| Ctrl + Shift + [ | 标题降级 |<br>| Ctrl + M | 切换数学环境 |<br>| Alt + C | 选中/不选中任务 |<br>| Ctrl + Shift + V | 切换预览 |<br>| Ctrl + K V | 将预览切换到侧边 |</p>
+<p>按下 shift + command + p 可以查看。<br><img src="https://user-gold-cdn.xitu.io/2019/1/21/168705bae7bd1ed7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"><br>| 键位             | 功能             |<br>| —————- | —————- |<br>| Ctrl + B         | 切换粗体         |<br>| Ctrl + I         | 切换斜体         |<br>| Alt + S          | 切换下划线       |<br>| Ctrl + Shift + ] | 标题升级         |<br>| Ctrl + Shift + [ | 标题降级         |<br>| Ctrl + M         | 切换数学环境     |<br>| Alt + C          | 选中/不选中任务  |<br>| Ctrl + Shift + V | 切换预览         |<br>| Ctrl + K V       | 将预览切换到侧边 |</p>
 <p>我在 arch 上装过的工具：ranger zsh git neovim yum yay yaourt oh-my-zsh fzf</p>
 <blockquote>
 <p>这几个图床还挺好用:</p>

@@ -485,9 +485,9 @@ height:50vh;
 <p>然后建立启动目录 mkdir -p /mnt/boot/efi</p>
 <p>接下来把 EFI 分区挂载到启动目录下 ： mount /dev/sdb1 /mnt/boot/efi</p>
 <p>接着使用 vim 更改镜像源以达到加速目的</p>
-<p><img src="https://raw.githubusercontent.com/ZRnown/Picture/master/img/Ram.gif" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ZRnown/Picture@master/img/20200131093454.png" alt=""></p>
 <p>vim /etc/pacman.d/mirrorlist</p>
-<p>操作：进入文件后按/China 回车 v 然后选择 China 源的所有， d 然后回到最上面，p。重复操作八次。<br>这个是 Vim 的操作，不懂的话可以百度看看，也就是用到了查找复制粘贴移动<br>| 按键 | 功能 |<br>| —— | ———————————— |<br>| /China | 在文件中查找 China |<br>| v | 进入可视化模式，移动上下左右可以选中 |<br>| d | 剪切选中的内容 |<br>| p | 粘贴剪切板内的内容 |<br>| j | 向下移动 |<br>| k | 向上移动 |<br>| h | 向左移动 |<br>| l | 向右移动 |</p>
+<p>操作：进入文件后按/China 回车 v 然后选择 China 源的所有， d 然后回到最上面，p。重复操作八次。<br>这个是 Vim 的操作，不懂的话可以百度看看，也就是用到了查找复制粘贴移动<br>| 按键   | 功能                                 |<br>| —— | ———————————— |<br>| /China | 在文件中查找 China                   |<br>| v      | 进入可视化模式，移动上下左右可以选中 |<br>| d      | 剪切选中的内容                       |<br>| p      | 粘贴剪切板内的内容                   |<br>| j      | 向下移动                             |<br>| k      | 向上移动                             |<br>| h      | 向左移动                             |<br>| l      | 向右移动                             |</p>
 <p>接着再安装系统</p>
 <figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pacstrap /mnt base linux base-devel</span><br><span class="line"></span><br><span class="line"># 需要在网络环境下安装！</span><br><span class="line"></span><br><span class="line"># 安装完成后输入</span><br><span class="line"></span><br><span class="line">genfstab /mnt &gt;&gt; /mnt/etc/fstab</span><br><span class="line"></span><br><span class="line">arch-chroot /mnt # 离开liveCD切换到linux系统</span><br></pre></td></tr></tbody></table></figure>
 
@@ -588,7 +588,7 @@ height:50vh;
 <p>说明：在~/.vimrc 中插入以上片段，在 call 内输入 Plug ‘地址’<br>再:PlugInstall 即可安装</p>
 <p>命令：PlugInstall<br>PlugClean</p>
 <h2 id="插件推荐篇"><a href="#插件推荐篇" class="headerlink" title="插件推荐篇"></a>插件推荐篇</h2><h3 id="常用-vscode-插件以及使用方法"><a href="#常用-vscode-插件以及使用方法" class="headerlink" title="常用 vscode 插件以及使用方法"></a>常用 vscode 插件以及使用方法</h3><h4 id="Markdown-All-in-One"><a href="#Markdown-All-in-One" class="headerlink" title="Markdown All in One"></a>Markdown All in One</h4><p>支持以下功能 + 快捷键</p>
-<p>按下 shift + command + p 可以查看。<br><img src="https://user-gold-cdn.xitu.io/2019/1/21/168705bae7bd1ed7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"><br>| 键位 | 功能 |<br>| —————- | —————- |<br>| Ctrl + B | 切换粗体 |<br>| Ctrl + I | 切换斜体 |<br>| Alt + S | 切换下划线 |<br>| Ctrl + Shift + ] | 标题升级 |<br>| Ctrl + Shift + [ | 标题降级 |<br>| Ctrl + M | 切换数学环境 |<br>| Alt + C | 选中/不选中任务 |<br>| Ctrl + Shift + V | 切换预览 |<br>| Ctrl + K V | 将预览切换到侧边 |</p>
+<p>按下 shift + command + p 可以查看。<br><img src="https://user-gold-cdn.xitu.io/2019/1/21/168705bae7bd1ed7?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"><br>| 键位             | 功能             |<br>| —————- | —————- |<br>| Ctrl + B         | 切换粗体         |<br>| Ctrl + I         | 切换斜体         |<br>| Alt + S          | 切换下划线       |<br>| Ctrl + Shift + ] | 标题升级         |<br>| Ctrl + Shift + [ | 标题降级         |<br>| Ctrl + M         | 切换数学环境     |<br>| Alt + C          | 选中/不选中任务  |<br>| Ctrl + Shift + V | 切换预览         |<br>| Ctrl + K V       | 将预览切换到侧边 |</p>
 <p>我在 arch 上装过的工具：ranger zsh git neovim yum yay yaourt oh-my-zsh fzf</p>
 <blockquote>
 <p>这几个图床还挺好用:</p>
@@ -628,7 +628,7 @@ height:50vh;
         <p>原文作者：<a href="https://zrnown.github.io">ZRnown</a>
             <p>原文链接：<a href="https://zrnown.github.io/2020/01/01/hello-world/">https://zrnown.github.io/2020/01/01/hello-world/</a>
                 <p>发表日期：<a href="https://zrnown.github.io/2020/01/01/hello-world/">January 1st 2020, 4:05:21 pm</a>
-                    <p>更新日期：<a href="https://zrnown.github.io/2020/01/01/hello-world/">January 30th 2020, 5:09:39 pm</a>
+                    <p>更新日期：<a href="https://zrnown.github.io/2020/01/01/hello-world/">January 31st 2020, 9:35:22 am</a>
                         <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
     </div>
     
