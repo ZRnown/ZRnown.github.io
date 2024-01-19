@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf8"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+    <title>
+      
+        Opencv学习笔记 | 龍蝦心語
+      
+    </title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png"/>
+    
+    
+      <link rel="mask-icon"
+            href="/images/logo.svg"
+            color=""/>
+    
+    
+    
+      
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/regular.ttf);
+        font-weight: regular;
+    }
+  </style>
+
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/bold.ttf);
+        font-weight: bold;
+    }
+  </style>
+
+
+    
+    <link rel="stylesheet"
+          type="text/css"
+          href='/css/layout.css'/>
+    
+    
+  <link rel="stylesheet" type="text/css" href="/css/post.css" />
+  
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="head">
+      <div class="nav">
+        <a href='/' class="nav-logo">
+          <img alt="logo" height="60px" width="60px" src="/images/logo.svg"/>
+        </a>
+        <input id="navBtn" type="checkbox"/>
+        <div class="nav-menu">
+          
+            
+              <a class="nav-menu-item" href="/computer">開發者</a>
+            
+              <a class="nav-menu-item" href="/math">算法</a>
+            
+              <a class="nav-menu-item" href="/yijing">易</a>
+            
+              <a class="nav-menu-item" href="/life">生活</a>
+            
+          
+          
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner--toc">
+      <div class="post-content__head">
+        <div class="post-title">Opencv学习笔记</div>
+        <div class="post-info">
+          
+  <a href="/tags/Python/" class="post-tag">#Python</a><a href="/tags/opencv/" class="post-tag">#opencv</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" class="post-tag">#计算机视觉</a>
+
+
+          <span class="post-date">2023-12-24</span>
+        </div>
+      </div>
+      
+        <aside class="toc-outer">
+          <div class="toc-title">目录</div>
+          <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BC%A9%E6%94%BE"><span class="post-toc-text">缩放</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%A3%81%E5%89%AA"><span class="post-toc-text">裁剪</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%98%E5%88%B6%E7%82%B9%E3%80%81%E7%9F%A9%E5%BD%A2%E5%92%8C%E5%9C%86%E5%BD%A2"><span class="post-toc-text">绘制点、矩形和圆形</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E5%83%8F%E6%BB%A4%E6%B3%A2"><span class="post-toc-text">图像滤波</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2"><span class="post-toc-text">中值滤波</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%B9%B3%E5%9D%87%E6%BB%A4%E6%B3%A2"><span class="post-toc-text">平均滤波</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%AB%98%E6%96%AF%E6%BB%A4%E6%B3%A2"><span class="post-toc-text">高斯滤波</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%94%90%E5%8C%96"><span class="post-toc-text">锐化</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E5%83%8F%E6%93%8D%E4%BD%9C%E7%A4%BA%E4%BE%8B"><span class="post-toc-text">图像操作示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BC%A9%E6%94%BE-1"><span class="post-toc-text">缩放</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E8%A3%81%E5%89%AA-1"><span class="post-toc-text">裁剪</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%98%E5%88%B6%E7%82%B9%EF%BC%8C%E7%9B%B4%E7%BA%BF%EF%BC%8C%E7%9F%A9%E5%BD%A2%EF%BC%8C%E5%9C%86%E5%BD%A2"><span class="post-toc-text">绘制点，直线，矩形，圆形</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E5%83%8F%E6%BB%A4%E6%B3%A2%E7%A4%BA%E4%BE%8B"><span class="post-toc-text">图像滤波示例</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%AD%E5%80%BC%E6%BB%A4%E6%B3%A2-1"><span class="post-toc-text">中值滤波</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%AB%98%E6%96%AF%E6%BB%A4%E6%B3%A2-1"><span class="post-toc-text">高斯滤波</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%B9%B3%E5%9D%87%E6%BB%A4%E6%B3%A2-1"><span class="post-toc-text">平均滤波</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E9%94%90%E5%8C%96%EF%BC%88%E5%8D%B7%E7%A7%AF%E6%93%8D%E4%BD%9C%EF%BC%89"><span class="post-toc-text">锐化（卷积操作）</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB"><span class="post-toc-text">杂七杂八</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E5%83%8F%E6%97%8B%E8%BD%AC"><span class="post-toc-text">图像旋转</span></a></li></ol>
+          <a href="#" class="toc-top">回到顶部</a>
+        </aside>
+      
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <h3 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h3><ul>
+<li><strong>函数：</strong> <code>cv2.resize(src, dsize, fx, fy, interpolation)</code><ul>
+<li><code>src</code>：输入图像。</li>
+<li><code>dsize</code>：输出图像的大小。</li>
+<li><code>fx</code>、<code>fy</code>：水平和垂直方向的缩放因子。</li>
+<li><code>interpolation</code>：插值方法（如 <code>cv2.INTER_LINEAR</code>、<code>cv2.INTER_NEAREST</code> 等）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h3><p>裁剪操作本质上是对图像的区域选取。可以使用数组切片操作（如 <code>image[y1:y2, x1:x2]</code>）或 <code>cv2.crop()</code> 函数来实现。</p>
+<h3 id="绘制点、矩形和圆形"><a href="#绘制点、矩形和圆形" class="headerlink" title="绘制点、矩形和圆形"></a>绘制点、矩形和圆形</h3><ul>
+<li><p><strong>函数：</strong> <code>cv2.circle(img, center, radius, color, thickness)</code></p>
+<ul>
+<li><code>img</code>：目标图像。</li>
+<li><code>center</code>：圆心坐标。</li>
+<li><code>radius</code>：圆的半径。</li>
+<li><code>color</code>：绘制颜色。</li>
+<li><code>thickness</code>：线条宽度。</li>
+</ul>
+</li>
+<li><p><strong>函数：</strong> <code>cv2.rectangle(img, pt1, pt2, color, thickness)</code></p>
+<ul>
+<li><code>img</code>：目标图像。</li>
+<li><code>pt1</code>、<code>pt2</code>：矩形的对角线两个点。</li>
+<li><code>color</code>：绘制颜色。</li>
+<li><code>thickness</code>：线条宽度。</li>
+</ul>
+</li>
+<li><p><strong>函数：</strong> <code>cv2.line(img, pt1, pt2, color, thickness)</code></p>
+<ul>
+<li><code>img</code>：目标图像。</li>
+<li><code>pt1</code>、<code>pt2</code>：线段的两个端点。</li>
+<li><code>color</code>：绘制颜色。</li>
+<li><code>thickness</code>：线条宽度。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图像滤波"><a href="#图像滤波" class="headerlink" title="图像滤波"></a>图像滤波</h3><h4 id="中值滤波"><a href="#中值滤波" class="headerlink" title="中值滤波"></a>中值滤波</h4><ul>
+<li><strong>函数：</strong> <code>cv2.medianBlur(src, ksize)</code><ul>
+<li><code>src</code>：输入图像。</li>
+<li><code>ksize</code>：滤波核大小。</li>
+</ul>
+</li>
+</ul>
+<h4 id="平均滤波"><a href="#平均滤波" class="headerlink" title="平均滤波"></a>平均滤波</h4><ul>
+<li><strong>函数：</strong> <code>cv2.blur(src, ksize)</code><ul>
+<li><code>src</code>：输入图像。</li>
+<li><code>ksize</code>：滤波核大小。</li>
+</ul>
+</li>
+</ul>
+<h4 id="高斯滤波"><a href="#高斯滤波" class="headerlink" title="高斯滤波"></a>高斯滤波</h4><ul>
+<li><strong>函数：</strong> <code>cv2.GaussianBlur(src, ksize, sigmaX)</code><ul>
+<li><code>src</code>：输入图像。</li>
+<li><code>ksize</code>：滤波核大小。</li>
+<li><code>sigmaX</code>：X 方向的高斯核标准差。</li>
+</ul>
+</li>
+</ul>
+<h4 id="锐化"><a href="#锐化" class="headerlink" title="锐化"></a>锐化</h4><ul>
+<li><strong>函数：</strong> 锐化可以通过卷积操作与原始图像进行组合实现。<ul>
+<li>锐化核可以是用户定义的，例如使用 <code>cv2.filter2D()</code> 进行卷积操作。</li>
+</ul>
+</li>
+</ul>
+<h3 id="图像操作示例"><a href="#图像操作示例" class="headerlink" title="图像操作示例"></a>图像操作示例</h3><h4 id="缩放-1"><a href="#缩放-1" class="headerlink" title="缩放"></a>缩放</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;input.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 缩放图像</span></span><br><span class="line">resized = cv2.resize(image, (new_width, new_height), interpolation=cv2.INTER_LINEAR)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="裁剪-1"><a href="#裁剪-1" class="headerlink" title="裁剪"></a>裁剪</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;input.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 裁剪图像</span></span><br><span class="line">cropped = image[startY:endY, startX:endX]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="绘制点，直线，矩形，圆形"><a href="#绘制点，直线，矩形，圆形" class="headerlink" title="绘制点，直线，矩形，圆形"></a>绘制点，直线，矩形，圆形</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建空白图像</span></span><br><span class="line">image = np.zeros((<span class="number">500</span>, <span class="number">500</span>, <span class="number">3</span>), dtype=np.uint8)</span><br><span class="line"></span><br><span class="line">cv2.circle(image, (<span class="number">100</span>, <span class="number">100</span>), <span class="number">2</span>, (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>), thickness=-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制矩形</span></span><br><span class="line">cv2.rectangle(image, (<span class="number">50</span>, <span class="number">50</span>), (<span class="number">200</span>, <span class="number">200</span>), (<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>), thickness=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制圆形</span></span><br><span class="line">cv2.circle(image, (<span class="number">250</span>, <span class="number">250</span>), <span class="number">50</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), thickness=-<span class="number">1</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="图像滤波示例"><a href="#图像滤波示例" class="headerlink" title="图像滤波示例"></a>图像滤波示例</h3><h4 id="中值滤波-1"><a href="#中值滤波-1" class="headerlink" title="中值滤波"></a>中值滤波</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;input.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 中值滤波</span></span><br><span class="line">median = cv2.medianBlur(image, ksize=<span class="number">5</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="高斯滤波-1"><a href="#高斯滤波-1" class="headerlink" title="高斯滤波"></a>高斯滤波</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;input.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 高斯滤波</span></span><br><span class="line">blurred = cv2.GaussianBlur(image, (<span class="number">5</span>, <span class="number">5</span>), sigmaX=<span class="number">0</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="平均滤波-1"><a href="#平均滤波-1" class="headerlink" title="平均滤波"></a>平均滤波</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;input.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 平均滤波</span></span><br><span class="line">averaged = cv2.blur(image, (<span class="number">5</span>, <span class="number">5</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="锐化（卷积操作）"><a href="#锐化（卷积操作）" class="headerlink" title="锐化（卷积操作）"></a>锐化（卷积操作）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取图像</span></span><br><span class="line">image = cv2.imread(<span class="string">&#x27;input.jpg&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 锐化核</span></span><br><span class="line">kernel = np.array([[<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>],</span><br><span class="line">                   [-<span class="number">1</span>, <span class="number">5</span>, -<span class="number">1</span>],</span><br><span class="line">                   [<span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进行卷积操作</span></span><br><span class="line">sharpened = cv2.filter2D(image, -<span class="number">1</span>, kernel)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="杂七杂八"><a href="#杂七杂八" class="headerlink" title="杂七杂八"></a>杂七杂八</h3><h3 id="图像旋转"><a href="#图像旋转" class="headerlink" title="图像旋转"></a>图像旋转</h3><p><strong>OpenCV 图像翻转函数 <code>cv2.flip()</code></strong></p>
+<ul>
+<li><code>cv2.flip(src, flipCode)</code>: 要翻转的输入图像和翻转操作的方向，其中<code>flipCode</code>是一个整数值，控制图像翻转的方向。<ul>
+<li><code>src</code>: 要翻转的输入图像。</li>
+<li><code>flipCode &gt; 0</code>: 沿着水平方向翻转图像。</li>
+<li><code>flipCode = 0</code>: 沿着垂直方向翻转图像。</li>
+<li><code>flipCode &lt; 0</code>: 同时沿着水平和垂直方向翻转图像。</li>
+</ul>
+</li>
+</ul>
+<p><strong>OpenCV 图像旋转函数 <code>cv2.rotate()</code></strong></p>
+<ul>
+<li><code>cv2.rotate(src, rotateCode)</code>: 要旋转的输入图像和旋转操作的方式，其中<code>rotateCode</code>是一个整数值，控制图像的旋转方向。<ul>
+<li><code>src</code>: 要旋转的输入图像。</li>
+<li><code>cv2.ROTATE_90_CLOCKWISE</code>: 顺时针旋转 90 度。</li>
+<li><code>cv2.ROTATE_90_COUNTERCLOCKWISE</code>: 逆时针旋转 90 度。</li>
+<li><code>cv2.ROTATE_180</code>: 旋转 180 度。</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+  </article>
+  <div class="post__foot">
+    
+      <div class="like-author">
+  <input type="checkbox" id="likeCode" />
+  <div class="author-face">
+    <img height="100px"
+         width="100px"
+         id="front-face"
+         alt="author face"
+         src="/assets/author-face.png" />
+    <img height="100px"
+         width="100px"
+         id="back-face"
+         alt="like code"
+         src="/assets/pay-code.jpg" />
+  </div>
+  <div class="like-text">“又摘桃花換酒錢”</div>
+  <label for="likeCode" class="like-btn">
+    <svg viewBox="0 0 1024 1024"
+         width="20px"
+         style="margin-right: 10px"
+         height="20px">
+      <path d="M466.88 908.96L113.824 563.296a270.08 270.08 0 0 1 0-387.392c108.8-106.56 284.896-106.56 393.696 0 1.504 1.472 2.976 2.944 4.448 4.48 1.472-1.536 2.944-3.008 4.448-4.48 108.8-106.56 284.896-106.56 393.696 0a269.952 269.952 0 0 1 34.016 347.072l-387.392 385.6a64 64 0 0 1-89.92 0.384z" p-id="13650" fill="#ee4242" />
+    </svg>
+    喜歡作者
+  </label>
+</div>
+
+    
+    <div class="post-nav">
+  
+    <a class="post-nav-item-left" href="/2024/01/01/numpy/">
+      <div class="text-align">
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596"/>
+        </svg>
+        <span class="text-small">上一篇</span>
+      </div>
+      <div>Numpy和Pandas学习</div>
+    </a>
+  
+  <div class="vhr"></div>
+  
+    <a class="post-nav-item-right" href="/2023/12/23/pythonlearn/">
+      <div class="text-align">
+        <span class="text-small">下一篇</span>
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             transform="scale(-1,-1)"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596"/>
+        </svg>
+      </div>
+      Python学习笔记
+    </a>
+  
+</div>
+
+    
+      <div class="related-post">
+  <div class="related__head">
+  <a href="/tags/Python/" class="post-tag">#Python</a><a href="/tags/opencv/" class="post-tag">#opencv</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" class="post-tag">#计算机视觉</a>
+
+</div>
+  <div class="realated__body">
+    
+      <div class="null"><div class="null-item"><div class="null-title"><a href="/2023/12/23/pythonlearn/" title="Python学习笔记" rel="bookmark">Python学习笔记</a></div></div><div class="null-item"><div class="null-title"><a href="/2024/01/01/numpy/" title="Numpy和Pandas学习" rel="bookmark">Numpy和Pandas学习</a></div></div><div class="null-item"><div class="null-title"><a href="/2023/12/23/arch/" title="Archlinux瞎折腾" rel="bookmark">Archlinux瞎折腾</a></div></div><div class="null-item"><div class="null-title"><a href="/2023/12/23/linuxlearn/" title="Linux学习笔记" rel="bookmark">Linux学习笔记</a></div></div></div>
+    
+  </div>
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+      <div class="foot-inner">
+        <div class="foot__head">
+          
+            <div class="foot-line">
+              
+                <div class="matts">海</div>
+              
+                <div class="matts">内</div>
+              
+                <div class="matts">存</div>
+              
+                <div class="matts">知</div>
+              
+                <div class="matts">己</div>
+              
+            </div>
+          
+            <div class="foot-line">
+              
+                <div class="matts">天</div>
+              
+                <div class="matts">涯</div>
+              
+                <div class="matts">若</div>
+              
+                <div class="matts">比</div>
+              
+                <div class="matts">邻</div>
+              
+            </div>
+          
+        </div>
+        <div class="foot__body">
+          
+            <div class="foot-item">
+              <div class="foot-item__head">朋友</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/icon/icon-link.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">Theme Tranquility</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/icon/icon-link.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://hozen.site">超級大龍蝦的主頁</a>
+                  </div>
+                
+                <div class="text">
+                  <img alt="link" height="20px" width="20px" src="/images/icon/icon-link+.svg"/>
+                  <a class="foot-link"
+                     href="mailto:2902414706@qq.com?subject=%E7%94%B3%E8%AF%B7%20Hozen.site%20%E7%9A%84%E5%8F%8B%E9%93%BE%E4%BD%8D%E7%BD%AE">
+                  申请友链</a>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="foot-item">
+              <div class="foot-item__head">账号</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-github.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/zrnown">ZRnown</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-wx.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI3NzQ4NDkzNg==&mid=2247484469&idx=1&sn=8a442bb67397f52cce5c38c3f9b41e36&chksm=eb64c0d2dc1349c40d2e1bb55615ae28b3f2951be22f00717b9ade98c851082e42dc666ab45d#rd">谁在胡言乱语</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-zh.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://www.zhihu.com/people/hozen">Mundooo</a>
+                  </div>
+                
+              </div>
+            </div>
+          
+          <div class="foot-item">
+            <div class="foot-item__head">联系</div>
+            <div class="foot-item__body">
+              <div class="text">
+                <img alt="link" height="20px" width="20px" src="/images/icon/icon-email.svg"/>
+                <a class="foot-link" href="mailto:2902414706@qq.com">2902414706@qq.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="http://example.com">龍蝦心語</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>&nbsp;及&nbsp;
+          <svg width="20" height="20" viewBox="0 0 725 725">
+            <path fill-rule="evenodd" fill="rgb(221, 221, 221)" d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z"/>
+            <path fill-rule="evenodd" fill="rgb(159, 159, 159)" d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z"/>
+            <path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z"/>
+          </svg>
+          <a target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">致远</a>&nbsp;驱动
+        </div>
+      </div>
+    </div>
+    
+    
+  
+
+  </body>
+</html>

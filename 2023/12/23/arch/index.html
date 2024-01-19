@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf8"/>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+    <title>
+      
+        Archlinux瞎折腾 | 龍蝦心語
+      
+    </title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    
+      <link rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png"/>
+    
+    
+      <link rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png"/>
+    
+    
+      <link rel="mask-icon"
+            href="/images/logo.svg"
+            color=""/>
+    
+    
+    
+      
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/regular.ttf);
+        font-weight: regular;
+    }
+  </style>
+
+  <style>
+    @font-face {
+        font-family:sourceHanSerif;
+        src: url(/font/bold.ttf);
+        font-weight: bold;
+    }
+  </style>
+
+
+    
+    <link rel="stylesheet"
+          type="text/css"
+          href='/css/layout.css'/>
+    
+    
+  <link rel="stylesheet" type="text/css" href="/css/post.css" />
+  
+
+  <meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <div class="head">
+      <div class="nav">
+        <a href='/' class="nav-logo">
+          <img alt="logo" height="60px" width="60px" src="/images/logo.svg"/>
+        </a>
+        <input id="navBtn" type="checkbox"/>
+        <div class="nav-menu">
+          
+            
+              <a class="nav-menu-item" href="/computer">開發者</a>
+            
+              <a class="nav-menu-item" href="/math">算法</a>
+            
+              <a class="nav-menu-item" href="/yijing">易</a>
+            
+              <a class="nav-menu-item" href="/life">生活</a>
+            
+          
+          
+        </div>
+        <label class="nav-btn" for="navBtn"></label>
+      </div>
+    </div>
+    <div class="body">
+      
+  <article class="post-content">
+    <div class="post-inner--toc">
+      <div class="post-content__head">
+        <div class="post-title">Archlinux瞎折腾</div>
+        <div class="post-info">
+          
+  <a href="/tags/Linux/" class="post-tag">#Linux</a>
+
+
+          <span class="post-date">2023-12-23</span>
+        </div>
+      </div>
+      
+        <aside class="toc-outer">
+          <div class="toc-title">目录</div>
+          <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#DWM-%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8"><span class="post-toc-text">DWM 窗口管理器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#patches"><span class="post-toc-text">patches</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#St-Simple-Terminal-%E6%9E%81%E7%AE%80%E4%B8%BB%E4%B9%89%E7%BB%88%E7%AB%AF"><span class="post-toc-text">St(Simple Terminal) 极简主义终端</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85zim"><span class="post-toc-text">安装zim</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85yshui%E7%89%88%E6%9C%AC%E7%9A%84picom"><span class="post-toc-text">安装yshui版本的picom</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B0%8F%E9%B9%A4%E5%8F%8C%E6%8B%BC"><span class="post-toc-text">小鹤双拼</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AD%97%E4%BD%93"><span class="post-toc-text">字体</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rofi"><span class="post-toc-text">rofi</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#oranchelo%E5%9B%BE%E6%A0%87%E4%B8%BB%E9%A2%98"><span class="post-toc-text">oranchelo图标主题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#drun%E6%B7%BB%E5%8A%A0%E8%BD%AF%E4%BB%B6"><span class="post-toc-text">drun添加软件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%BC%A0%E6%A0%87%E7%81%B5%E6%95%8F%E5%BA%A6"><span class="post-toc-text">鼠标灵敏度</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="post-toc-text">需要安装的东西</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85feh-nautilus-flameshot-qq-clash-yesplaymusic"><span class="post-toc-text">安装feh nautilus flameshot qq clash yesplaymusic</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="post-toc-text">配置环境变量</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#GRUB%E5%BC%95%E5%AF%BC%E7%95%8C%E9%9D%A2%E7%BE%8E%E5%8C%96"><span class="post-toc-text">GRUB引导界面美化</span></a></li></ol></li></ol>
+          <a href="#" class="toc-top">回到顶部</a>
+        </aside>
+      
+      <div class="post-content__body">
+        
+          <div class="post-gallery">
+            
+          </div>
+        
+        <h1 id="DWM-窗口管理器"><a href="#DWM-窗口管理器" class="headerlink" title="DWM 窗口管理器"></a>DWM 窗口管理器</h1><p><a target="_blank" rel="noopener" href="https://github.com/ZRnown/mydwm">我的DWM配置</a></p>
+<p>这是大佬编译的<code>dwm</code>，补丁完美无冲突，我将其做了细微改动，去除了自己不需要的功能。</p>
+<h2 id="patches"><a href="#patches" class="headerlink" title="patches"></a>patches</h2><ul>
+<li>dwm-alpha-6.3.diff</li>
+<li>dwm-alpha-systray-6.3.diff</li>
+<li>dwm-autostart-20161205-bb3bd6f.diff</li>
+<li>dwm-doublepressquit-6.3.diff</li>
+<li>dwm-fancybar-20200423-ed3ab6b.diff</li>
+<li>dwm-fullgaps-toggle-20200830.diff</li>
+<li>dwm-gaplessgrid-20160731-56a31dc.diff</li>
+<li>dwm-hide_vacant_tags-6.3.diff</li>
+<li>dwm-launchers-20200527-f09418b.diff</li>
+<li>dwm-pertag-perseltag-6.2.diff</li>
+<li>dwm-restartsig-20180523-6.2.diff</li>
+<li>dwm-rotatestack-20161021-ab9571b.diff</li>
+<li>dwm-scratchpad-6.2.diff</li>
+<li>dwm-statuscmd-20210405-67d76bd.diff</li>
+<li>dwm-viewontag-20210312-61bb8b2.diff</li>
+</ul>
+<h1 id="St-Simple-Terminal-极简主义终端"><a href="#St-Simple-Terminal-极简主义终端" class="headerlink" title="St(Simple Terminal) 极简主义终端"></a>St(Simple Terminal) 极简主义终端</h1><p><a target="_blank" rel="noopener" href="https://github.com/ZRnown/myst">我的st配置</a></p>
+<h2 id="安装zim"><a href="#安装zim" class="headerlink" title="安装zim"></a>安装zim</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://raw.githubusercontent.com/zimfw/install/master/install.zsh | zsh</span><br></pre></td></tr></table></figure>
+<h2 id="安装yshui版本的picom"><a href="#安装yshui版本的picom" class="headerlink" title="安装yshui版本的picom"></a>安装yshui版本的picom</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/yshui/picom.git</span><br></pre></td></tr></table></figure>
+
+<h2 id="小鹤双拼"><a href="#小鹤双拼" class="headerlink" title="小鹤双拼"></a>小鹤双拼</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/ssnhd/rime.git ~/.config/fcitx5/rime</span><br></pre></td></tr></table></figure>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S ttf-cascadia-code</span><br></pre></td></tr></table></figure>
+<h2 id="rofi"><a href="#rofi" class="headerlink" title="rofi"></a>rofi</h2><h3 id="oranchelo图标主题"><a href="#oranchelo图标主题" class="headerlink" title="oranchelo图标主题"></a>oranchelo图标主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/OrancheloTeam/oranchelo-icon-theme.git</span><br><span class="line"><span class="built_in">cd</span> oranchelo-icon-theme</span><br><span class="line">sudo make</span><br><span class="line">sudo make install</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/catppuccin/rofi.git</span><br></pre></td></tr></table></figure>
+<h3 id="drun添加软件"><a href="#drun添加软件" class="headerlink" title="drun添加软件"></a>drun添加软件</h3><p>你可以手动创建一个 .desktop 文件，并将其放置在 &#x2F;usr&#x2F;share&#x2F;applications 目录下，以便使用 Rofi 的 “drun” 模式启动应用程序。以下是创建一个简单的 .desktop 文件的步骤：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvim /usr/share/applications/qq.desktop</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]</span><br><span class="line">Name=QQ</span><br><span class="line">Exec=/home/your_username/software/qq.appimage</span><br><span class="line">Type=Application</span><br><span class="line">Icon=/path/to/qq/icon.png</span><br></pre></td></tr></table></figure>
+
+<h3 id="鼠标灵敏度"><a href="#鼠标灵敏度" class="headerlink" title="鼠标灵敏度"></a>鼠标灵敏度</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xinput list <span class="comment">#列出使用的设备</span></span><br><span class="line">xinput --set-prop <span class="string">&quot;设备ID&quot;</span> <span class="string">&quot;libinput Accel Speed&quot;</span> -0.5</span><br></pre></td></tr></table></figure>
+<h2 id="需要安装的东西"><a href="#需要安装的东西" class="headerlink" title="需要安装的东西"></a>需要安装的东西</h2><h2 id="安装feh-nautilus-flameshot-qq-clash-yesplaymusic"><a href="#安装feh-nautilus-flameshot-qq-clash-yesplaymusic" class="headerlink" title="安装feh nautilus flameshot qq clash yesplaymusic"></a>安装feh nautilus flameshot qq clash yesplaymusic</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/qier222/YesPlayMusic/releases/download/v0.4.7/YesPlayMusic-0.4.7.AppImage</span><br><span class="line"></span><br><span class="line">sudo pacman -S feh nautilus flameshot Hightlight fzf feh fd zsh lolcat</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvim /etc/environment</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">GTK_IM_MODULE=fcitx</span><br><span class="line">QT_IM_MODULE=fcitx</span><br><span class="line">XMODIFIERS=@im=fcitx</span><br><span class="line">SDL_IM_MODULE=fcitx</span><br><span class="line">GLFW_IM_MODULE=ibus</span><br><span class="line">https_proxy=http://127.0.0.1:7890</span><br><span class="line">http_proxy=http://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+<h2 id="GRUB引导界面美化"><a href="#GRUB引导界面美化" class="headerlink" title="GRUB引导界面美化"></a>GRUB引导界面美化</h2><p>在<a target="_blank" rel="noopener" href="https://www.pling.com/p/1230882%E4%B8%8B%E8%BD%BD%E4%B8%BB%E9%A2%98">https://www.pling.com/p/1230882下载主题</a><br>接下来 cd 进解压出来的文件夹，打开 终端 输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">cp</span> . /usr/share/grub/themes/Distro -rf</span><br></pre></td></tr></table></figure>
+
+<p>以将主题放置在系统的 GRUB 默认文件夹内。</p>
+<p>接着编辑 &#x2F;etc&#x2F;default&#x2F;grub 文件，找到 #GRUB_THEME&#x3D; 一行，将前面的注释去掉，并指向主题的 theme.txt 文件。即</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#GRUB_THEME=</span><br><span class="line">GRUB_THEME=&quot;/usr/share/grub/themes/Distro/theme.txt&quot; #修改后</span><br></pre></td></tr></table></figure>
+<p>然后再在终端输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-mkconfig -o /boot/grub/grub.cfg</span><br></pre></td></tr></table></figure>
+
+      </div>
+    </div>
+  </article>
+  <div class="post__foot">
+    
+      <div class="like-author">
+  <input type="checkbox" id="likeCode" />
+  <div class="author-face">
+    <img height="100px"
+         width="100px"
+         id="front-face"
+         alt="author face"
+         src="/assets/author-face.png" />
+    <img height="100px"
+         width="100px"
+         id="back-face"
+         alt="like code"
+         src="/assets/pay-code.jpg" />
+  </div>
+  <div class="like-text">“又摘桃花換酒錢”</div>
+  <label for="likeCode" class="like-btn">
+    <svg viewBox="0 0 1024 1024"
+         width="20px"
+         style="margin-right: 10px"
+         height="20px">
+      <path d="M466.88 908.96L113.824 563.296a270.08 270.08 0 0 1 0-387.392c108.8-106.56 284.896-106.56 393.696 0 1.504 1.472 2.976 2.944 4.448 4.48 1.472-1.536 2.944-3.008 4.448-4.48 108.8-106.56 284.896-106.56 393.696 0a269.952 269.952 0 0 1 34.016 347.072l-387.392 385.6a64 64 0 0 1-89.92 0.384z" p-id="13650" fill="#ee4242" />
+    </svg>
+    喜歡作者
+  </label>
+</div>
+
+    
+    <div class="post-nav">
+  
+    <a class="post-nav-item-left" href="/2023/12/23/math/">
+      <div class="text-align">
+        <svg t="1670570876164"
+             class="icon"
+             viewBox="0 0 1024 1024"
+             width="16"
+             height="16">
+          <path d="M384 512L731.733333 202.666667c17.066667-14.933333 19.2-42.666667 4.266667-59.733334-14.933333-17.066667-42.666667-19.2-59.733333-4.266666l-384 341.333333c-10.666667 8.533333-14.933333 19.2-14.933334 32s4.266667 23.466667 14.933334 32l384 341.333333c8.533333 6.4 19.2 10.666667 27.733333 10.666667 12.8 0 23.466667-4.266667 32-14.933333 14.933333-17.066667 14.933333-44.8-4.266667-59.733334L384 512z" p-id="14596"/>
+        </svg>
+        <span class="text-small">上一篇</span>
+      </div>
+      <div>math</div>
+    </a>
+  
+  <div class="vhr"></div>
+  
+    <div class="post-nav-item-right"></div>
+  
+</div>
+
+    
+      <div class="related-post">
+  <div class="related__head">
+  <a href="/tags/Linux/" class="post-tag">#Linux</a>
+
+</div>
+  <div class="realated__body">
+    
+      <div class="null"><div class="null-item"><div class="null-title"><a href="/2023/12/23/linuxlearn/" title="Linux学习笔记" rel="bookmark">Linux学习笔记</a></div></div><div class="null-item"><div class="null-title"><a href="/2023/12/24/opencv/" title="Opencv学习笔记" rel="bookmark">Opencv学习笔记</a></div></div><div class="null-item"><div class="null-title"><a href="/2023/12/23/pythonlearn/" title="Python学习笔记" rel="bookmark">Python学习笔记</a></div></div></div>
+    
+  </div>
+</div>
+
+    
+    
+  </div>
+
+    </div>
+    <div class="foot">
+      <div class="foot-inner">
+        <div class="foot__head">
+          
+            <div class="foot-line">
+              
+                <div class="matts">海</div>
+              
+                <div class="matts">内</div>
+              
+                <div class="matts">存</div>
+              
+                <div class="matts">知</div>
+              
+                <div class="matts">己</div>
+              
+            </div>
+          
+            <div class="foot-line">
+              
+                <div class="matts">天</div>
+              
+                <div class="matts">涯</div>
+              
+                <div class="matts">若</div>
+              
+                <div class="matts">比</div>
+              
+                <div class="matts">邻</div>
+              
+            </div>
+          
+        </div>
+        <div class="foot__body">
+          
+            <div class="foot-item">
+              <div class="foot-item__head">朋友</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/icon/icon-link.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">Theme Tranquility</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/icon/icon-link.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://hozen.site">超級大龍蝦的主頁</a>
+                  </div>
+                
+                <div class="text">
+                  <img alt="link" height="20px" width="20px" src="/images/icon/icon-link+.svg"/>
+                  <a class="foot-link"
+                     href="mailto:2902414706@qq.com?subject=%E7%94%B3%E8%AF%B7%20Hozen.site%20%E7%9A%84%E5%8F%8B%E9%93%BE%E4%BD%8D%E7%BD%AE">
+                  申请友链</a>
+                </div>
+              </div>
+            </div>
+          
+          
+            <div class="foot-item">
+              <div class="foot-item__head">账号</div>
+              <div class="foot-item__body">
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-github.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://github.com/zrnown">ZRnown</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-wx.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzI3NzQ4NDkzNg==&mid=2247484469&idx=1&sn=8a442bb67397f52cce5c38c3f9b41e36&chksm=eb64c0d2dc1349c40d2e1bb55615ae28b3f2951be22f00717b9ade98c851082e42dc666ab45d#rd">谁在胡言乱语</a>
+                  </div>
+                
+                  <div class="text">
+                    <img alt="link" height="20px" width="20px" src="/images/logo-zh.svg"/>
+                    <a class="foot-link" target="_blank" rel="noopener" href="https://www.zhihu.com/people/hozen">Mundooo</a>
+                  </div>
+                
+              </div>
+            </div>
+          
+          <div class="foot-item">
+            <div class="foot-item__head">联系</div>
+            <div class="foot-item__body">
+              <div class="text">
+                <img alt="link" height="20px" width="20px" src="/images/icon/icon-email.svg"/>
+                <a class="foot-link" href="mailto:2902414706@qq.com">2902414706@qq.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <a href="http://example.com">龍蝦心語</a> &nbsp;|&nbsp;由&nbsp;<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>&nbsp;及&nbsp;
+          <svg width="20" height="20" viewBox="0 0 725 725">
+            <path fill-rule="evenodd" fill="rgb(221, 221, 221)" d="M145.870,236.632 L396.955,103.578 L431.292,419.44 L156.600,522.53 L145.870,236.632 Z"/>
+            <path fill-rule="evenodd" fill="rgb(159, 159, 159)" d="M396.955,103.578 L564.345,234.486 L611.558,513.469 L431.292,419.44 L396.955,103.578 Z"/>
+            <path fill-rule="evenodd" fill="rgb(0, 0, 0)" d="M431.292,419.44 L611.558,513.469 L358.327,595.18 L156.600,522.53 L431.292,419.44 Z"/>
+          </svg>
+          <a target="_blank" rel="noopener" href="https://github.com/hooozen/hexo-theme-tranquility">致远</a>&nbsp;驱动
+        </div>
+      </div>
+    </div>
+    
+    
+  
+
+  </body>
+</html>
