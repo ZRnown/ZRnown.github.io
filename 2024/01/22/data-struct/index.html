@@ -134,7 +134,7 @@
 <p>链表分为带头结点的链表和不带头结点的链表，戴头结点的链表就是会有一个头结点指向后续的整个链表，但是头结点不存放数据</p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/85dc3504e1bed27afad5564b368c918b.png"></p>
 <p>而不带头结点的链表就像上面那样，第一个节点就是存放数据的结点，一般设计链表都会采用带头结点的结构，因为操作更加方便。</p>
-<p><strong>链表的插入</strong></p>
+<p><strong>单链表的插入</strong></p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/cad7b56babe16ece8ee835c9ba893182.png"></p>
 <p>我们可以先修改新插入的结点的后继结点（也就是下一个结点）指向，指向原本在这个位置的结点：</p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/184241a4c17a9c6468c8309994b89dcb.png"></p>
@@ -142,6 +142,29 @@
 <p><img src="https://img-blog.csdnimg.cn/img_convert/d2cd8cd198ecfe17d3688d449caa0dc3.png"></p>
 <p>这样，我们就成功插入了一个新的结点，现在新插入的结点到达了原本的第二个位置上：</p>
 <p><img src="https://img-blog.csdnimg.cn/img_convert/6bc3bc7fa667b3f81c6668e127b75a40.png"></p>
+<h4 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h4><p>通过链式存储，我们不用再像顺序表那样一次性申请一段连续的空间，而是只需要单独为结点申请内存空间，同时在插入和删除的速度上也比顺序表轻松。不过有一个问题就是，如果我们想要操作某一个结点，比如删除或是插入，那么由于单链表的性质，我们只能先去找到它的前驱结点，才能进行。</p>
+<p>为了解决这种查找前驱结点非常麻烦的问题，我们可以让结点不仅保存指向后续结点的指针，同时也保存指向前驱结点的指针。这样我们无论在哪个结点，都能够快速找到对应的前驱结点，就很方便了，这样的链表我们成为双向链表（双链表）</p>
+<p><img src="https://pic.imgdb.cn/item/65afc6d3871b83018a845121.png"></p>
+<h4 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h4><p>接着我们再来简单认识一下另一种类型的链表，循环链表，这种链表实际上和前面我们讲的链表是一样的，但是它的最后一个结点，是与头结点相连的，双向链表和单向链表都可以做成这样的环形结构，我们这里以单链表为例：</p>
+<p><img src="https://s2.loli.net/2022/07/24/KZl4SJVYQ5cfv7b.png" alt="image-20220724134153904.png"></p>
+<p>这种类型的链表实际上与普通链表的唯一区别就在于最后是否连接到头结点，因此循环链表支持从任意一个结点出发都可以到达任何的结点，而普通的链表则只能从头结点出发才能到达任意结点，同样也是为了更灵活而设计的。</p>
+<p><strong>双链表插入操作</strong></p>
+<p>接着是双向链表的插入操作，这就比单链表要麻烦一些了，我们先来分析一下：</p>
+<p><img src="https://pic.imgdb.cn/item/65afc9bd871b83018a915642.jpg"></p>
+<p>首先我们需要考虑后继结点，当新的结点插入之后，新的结点的后继结点就是原本在此位置上的结点，所以我们可以先将待插入结点的后继指针指向此位置上的结点。</p>
+<p>由于是双向链表，所以我们需要将原本在此位置上的结点的前驱指针指向新的结点：</p>
+<p><img src="https://pic.imgdb.cn/item/65afca46871b83018a93a805.png" alt="image-20220724130219180"></p>
+<p>接着我们来处理一下前驱结点，首先将前驱结点的后继指针修改为新的结点：</p>
+<p><img src="https://pic.imgdb.cn/item/65afca53871b83018a93e083.png" alt="image-20220724130342232"></p>
+<p>最后我们将新的结点的前驱指针指向前驱结点即可：</p>
+<p><img src="https://pic.imgdb.cn/item/65afca61871b83018a9420de.png" alt="image-20220724130442927"></p>
+<p><strong>双链表删除操作</strong></p>
+<p>无论是正向遍历还是反向遍历，都可以正常完成，相比单链表的灵活度肯定是更大的，我们接着来看删除操作，其实删除操作也是差不多的方式：</p>
+<p><img src="https://pic.imgdb.cn/item/65afcab0871b83018a9574e9.png" alt="image-20220724132636580"></p>
+<p>我们只需将前驱结点和后继结点的指向修改即可：</p>
+<p><img src="https://pic.imgdb.cn/item/65afcaba871b83018a959c6d.png" alt="image-20220724132801105"></p>
+<p>接着直接删除对应的结点即可：</p>
+<p><img src="https://pic.imgdb.cn/item/65afcac3871b83018a95c186.png" alt="image-20220724132906001"> </p>
 
       </div>
     </div>
